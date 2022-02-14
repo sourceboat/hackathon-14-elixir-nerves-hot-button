@@ -53,7 +53,11 @@ defmodule HotButton.MixProject do
       {:nerves_system_rpi4, "~> 1.17", runtime: false, targets: :rpi4},
       {:nerves_system_bbb, "~> 2.12", runtime: false, targets: :bbb},
       {:nerves_system_osd32mp1, "~> 0.8", runtime: false, targets: :osd32mp1},
-      {:nerves_system_x86_64, "~> 1.17", runtime: false, targets: :x86_64}
+      {:nerves_system_x86_64, "~> 1.17", runtime: false, targets: :x86_64},
+      {:castore, "~> 0.1.0"},
+      {:mint, "~> 1.0"},
+      {:circuits_gpio, "~> 0.4"},
+      {:vintage_net_wifi, "~> 0.10.0", targets: @all_targets}
     ]
   end
 
