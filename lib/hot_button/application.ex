@@ -13,6 +13,7 @@ defmodule HotButton.Application do
 
     children =
       [
+        {HotButton, {0}}
         # Children for all targets
         # Starts a worker by calling: HotButton.Worker.start_link(arg)
         # {HotButton.Worker, arg},
