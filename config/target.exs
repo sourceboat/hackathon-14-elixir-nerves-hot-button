@@ -1,10 +1,11 @@
 import Config
 import System, only: [fetch_env!: 1]
 
-
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
 # involved with firmware updates.
+config :hot_button,
+  slack_webhook: System.get_env("SLACK_WEBHOOK_URL")
 
 config :shoehorn,
   init: [:nerves_runtime, :nerves_pack],
@@ -60,20 +61,20 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-    {"wlan0", %{
-        type: VintageNetWiFi,
-        vintage_net_wifi: %{
-          networks: [
-            %{
-              key_mgmt: :wpa_psk,
-              ssid: fetch_env!("WLAN_SSID"),
-              psk: fetch_env!("WLAN_PASSWORD"),
-            }
-          ]
-        },
-        ipv4: %{method: :dhcp}
-      }
-    }
+    {"wlan0",
+     %{
+       type: VintageNetWiFi,
+       vintage_net_wifi: %{
+         networks: [
+           %{
+             key_mgmt: :wpa_psk,
+             ssid: fetch_env!("WLAN_SSID"),
+             psk: fetch_env!("WLAN_PASSWORD")
+           }
+         ]
+       },
+       ipv4: %{method: :dhcp}
+     }}
   ]
 
 config :mdns_lite,
