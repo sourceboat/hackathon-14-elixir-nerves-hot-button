@@ -1,4 +1,6 @@
 import Config
+import System, only: [fetch_env!: 1]
+
 
 # Use shoehorn to start the main application. See the shoehorn
 # docs for separating out critical OTP applications such as those
@@ -58,7 +60,20 @@ config :vintage_net,
        type: VintageNetEthernet,
        ipv4: %{method: :dhcp}
      }},
-    {"wlan0", %{type: VintageNetWiFi}}
+    {"wlan0", %{
+        type: VintageNetWiFi,
+        vintage_net_wifi: %{
+          networks: [
+            %{
+              key_mgmt: :wpa_psk,
+              ssid: fetch_env!("WLAN_SSID"),
+              psk: fetch_env!("WLAN_PASSWORD"),
+            }
+          ]
+        },
+        ipv4: %{method: :dhcp}
+      }
+    }
   ]
 
 config :mdns_lite,
