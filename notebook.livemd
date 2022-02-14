@@ -40,7 +40,7 @@ defmodule Slack do
       Mint.HTTP.request(
         conn,
         "POST",
-        "/services/T02QGUPA1/B032HQXJ9TR/Fzx0AtdFpEd320pKSSv4vnWx",
+        Application.fetch_env(:hot_button, :slack_webhook),
         [],
         "{\"channel\": \"#_hot_button\", \"username\": \"Hot Button\", \"text\": \"Someone pressed the hot button and it was successfully debounced by our awesome script.\", \"icon_emoji\": \":ghost:\"}"
       )
