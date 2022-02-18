@@ -1,6 +1,6 @@
 # HotButton
 
-During our hackathon we gave Elixir Nerves a try. We created a (Nerves Livebook)[https://github.com/livebook-dev/nerves_livebook] to handle switch events by posting a message to a slack channel (see [notebook.livemd](notebook.livemd)).
+During our hackathon we gave Elixir Nerves a try. We created a [Nerves Livebook](https://github.com/livebook-dev/nerves_livebook) to handle switch events by posting a message to a slack channel (see [notebook.livemd](notebook.livemd)).
 
 After we had a working Livebook solution we created our own Nerves firmware image and implemented a GenServer.
 
@@ -30,4 +30,4 @@ To start your Nerves app:
 
 ## Docker (Wip)
 
-We created a basic Docker setup so that not everyone has to install (the dependencies)[https://hexdocs.pm/nerves/installation.html#macos] on the host system (see [Dockerfile](Dockerfile)). The setup was not tested sufficiently and is still work progress. It especially will not work on Apple Silicone because of a missing fwup build.
+We created a basic Docker setup so that not everyone has to install [the dependencies](https://hexdocs.pm/nerves/installation.html#macos) on the host system (see [Dockerfile](Dockerfile)). The setup was not tested sufficiently and is still work progress. It especially will not work on Apple Silicone because of a missing fwup build.
