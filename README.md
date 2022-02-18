@@ -30,4 +30,4 @@ To start your Nerves app:
 
 ## Docker (Wip)
 
-We created a basic Docker setup so that not everyone has to install [the dependencies](https://hexdocs.pm/nerves/installation.html#macos) on the host system (see [Dockerfile](Dockerfile)). The setup was not tested sufficiently and is still work progress. It especially will not work on Apple Silicone because of a missing fwup build.
+We created a basic Docker setup so that not everyone has to install [the dependencies](https://hexdocs.pm/nerves/installation.html#macos) on the host system (see [Dockerfile](Dockerfile)). The setup is not tested sufficiently and is still work progress. It especially will not work on Apple Silicone because of a missing fwup build.
