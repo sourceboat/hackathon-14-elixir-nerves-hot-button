@@ -1,6 +1,8 @@
 # HotButton
 
-**TODO: Add description**
+During our hackathon we gave Elixir Nerves a try. We created a (Nerves Livebook)[https://github.com/livebook-dev/nerves_livebook] to handle switch events by posting a message to a slack channel (see [notebook.livemd](notebook.livemd)).
+
+After we had a working Livebook solution we created our own Nerves firmware image and implemented a GenServer.
 
 ## Targets
 
@@ -17,16 +19,15 @@ https://hexdocs.pm/nerves/targets.html#content
 ## Getting Started
 
 To start your Nerves app:
-  * `export MIX_TARGET=my_target` or prefix every command with
-    `MIX_TARGET=my_target`. For example, `MIX_TARGET=rpi3`
+  * set the following environment variables like `MIX_TARGET` by exporting it via `export MIX_TARGET=my_target` or prefix every command with `MIX_TARGET=my_target`. For example, `MIX_TARGET=rpi3`:
+    * `MIX_TARGET`
+    * `WLAN_SSID`
+    * `WLAN_PASSWORD`
+    * `SLACK_WEBHOOK_URL`
   * Install dependencies with `mix deps.get`
   * Create firmware with `mix firmware`
   * Burn to an SD card with `mix firmware.burn`
 
-## Learn more
+## Docker (Wip)
 
-  * Official docs: https://hexdocs.pm/nerves/getting-started.html
-  * Official website: https://nerves-project.org/
-  * Forum: https://elixirforum.com/c/nerves-forum
-  * Discussion Slack elixir-lang #nerves ([Invite](https://elixir-slackin.herokuapp.com/))
-  * Source: https://github.com/nerves-project/nerves
+We created a basic Docker setup so that not everyone has to install (the dependencies)[https://hexdocs.pm/nerves/installation.html#macos] on the host system (see [Dockerfile](Dockerfile)). The setup was not tested sufficiently and is still work progress. It especially will not work on Apple Silicone because of a missing fwup build.
