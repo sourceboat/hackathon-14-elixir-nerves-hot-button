@@ -7,7 +7,6 @@ RUN apt-get update && \
     apt-get install -y libc6-arm64-cross build-essential automake autoconf git squashfs-tools ssh-askpass pkg-config curl && \
     rm -rf /var/lib/apt/lists/*
 
-
 # Install fwup (https://github.com/fwup-home/fwup)
 ENV FWUP_VERSION="1.9.0"
 RUN wget https://github.com/fwup-home/fwup/releases/download/v${FWUP_VERSION}/fwup_${FWUP_VERSION}_amd64.deb
