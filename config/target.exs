@@ -5,7 +5,7 @@ import System, only: [fetch_env!: 1]
 # docs for separating out critical OTP applications such as those
 # involved with firmware updates.
 config :hot_button,
-  slack_webhook: System.get_env("SLACK_WEBHOOK_URL")
+  slack_webhook: System.fetch_env!("SLACK_WEBHOOK_URL")
 
 config :shoehorn,
   init: [:nerves_runtime, :nerves_pack],
